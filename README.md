@@ -1,8 +1,8 @@
-📊 Finance Report with Time Intelligence
-Power BI Developer Portfolio Project
+Finance Report with Time Intelligence
 📌 Overview
 This project demonstrates advanced Power BI development using the Financial Sample dataset.
-It focuses on:
+
+It includes:
 
 Time‑intelligence DAX
 
@@ -10,17 +10,19 @@ Year‑over‑year variance analysis
 
 Rolling 12‑month metrics
 
-Clean, professional dashboard design
+KPI‑driven reporting
 
-Multi‑page navigation and validation tables
+Clean dashboard layout
+
+Validation tables for accuracy
 
 The report contains two pages:
 
-Main Report – KPIs, time‑series charts, and segment/country analysis
+Main Report
 
-Tables Page – detailed MTD/QTD/YTD validation and YoY variance tables
+Tables Page
 
-🧱 Data Model
+📂 Data Model
 Tables
 Fact Finance – sales, profit, date, segment, country
 
@@ -30,22 +32,17 @@ Date Table – continuous calendar with Year, Quarter, Month, Year‑Month
 
 Relationships
 Date[Date] → Fact Finance[Date] (1:*)
-
-Single‑direction
-
-Date table marked as the official Date table
+This is the core relationship driving the model.
 
 Screenshots included in /DataModel.
 
 🧮 DAX Measures
-Base Measures
 Total Sales
 
 Total Profit
 
 Profit Margin %
 
-Time Intelligence
 Sales MTD
 
 Sales QTD
@@ -60,121 +57,59 @@ Sales Var vs LY %
 
 Sales Rolling 12M
 
-Forecasting (Optional)
 Avg Sales Last 12M
 
 Forecast Sales
 
 Actual + Forecast
 
-All DAX code is included in:
+(Full DAX code included in /DAX/AllMeasures.dax)
 
-Code
-/DAX/AllMeasures.dax
 📊 Report Pages
-1. Main Report
-A complete financial overview with KPIs, time‑series analysis, and breakdowns.
+Main Report
+KPI cards
 
-Filters
-Year
+Total Sales by Date
 
-Country
+Rolling 12M vs Total Sales
 
-Segment
+Sales by Segment
 
-Navigation
-Main Report (active)
+Sales by Country
 
-Tables (button)
+Navigation buttons
 
-KPIs
-Total Sales
+Filters: Year, Country, Segment
 
-Sales Var vs LY %
+Tables Page
+Time‑intelligence validation table (MTD, QTD, YTD)
 
-Sales Rolling 12M
+YoY variance table
 
-Sales LY
+Filters: Year, Country, Segment
 
-Visuals
-Total Sales by Date (line chart)
+📸 Screenshots
+Include:
 
-Rolling 12M vs Total Sales (dual line chart)
-
-Total Sales & Var vs LY % by Segment (bar chart)
-
-Total Sales by Country (bar chart)
-
-2. Tables Page
-This page validates all time‑intelligence logic using detailed tables.
-
-Filters
-Year
-
-Country
-
-Segment
-
-Navigation
 Main Report
 
-Tables (active)
+Tables Page
 
-Visuals
-Table 1 — Time Intelligence Validation
-Columns:
+Total Sales by Date
 
-Year
+Rolling 12M vs Total Sales
 
-Total Sales
+Sales by Segment
 
-Sales MTD
+Sales by Country
 
-Sales QTD
+Time Intelligence Table
 
-Sales YTD
+YoY Variance Table
 
-Breakdown:
+KPI cards
 
-Year → Quarter → Month
-
-Confirms correct MTD/QTD/YTD accumulation
-
-Table 2 — YoY Variance
-Columns:
-
-Year‑Month
-
-Total Sales
-
-Sales Var vs LY
-
-Shows month‑over‑month YoY comparison.
-
-📸 Screenshots Included
-Inside /Screenshots
-MainReport.png
-
-TablesPage.png
-
-SalesByDate.png
-
-Rolling12M.png
-
-SalesBySegment.png
-
-SalesByCountry.png
-
-TimeIntelligenceTable.png
-
-YoYVarianceTable.png
-
-Inside /DataModel
-Model.png
-
-Relationships.png
-
-DateTable.png
+Filters & navigation buttons
 
 📁 Repository Structure
 Code
@@ -211,7 +146,7 @@ Rolling metrics and YoY variance
 
 Clean star‑schema modelling
 
-KPI‑driven executive reporting
+KPI‑driven reporting
 
 Validation tables for accuracy
 
