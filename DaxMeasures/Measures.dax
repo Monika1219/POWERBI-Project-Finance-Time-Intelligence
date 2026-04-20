@@ -1,0 +1,103 @@
+Total Sales =
+SUM ( 'Fact Finance'[Sales] )
+
+Total Profit =
+SUM ( 'Fact Finance'[Profit] )
+
+Profit Margin % =
+DIVIDE ( [Total Profit], [Total Sales] )
+
+Sales MTD =
+TOTALMTD (
+    [Total Sales],
+    'Date'[Date]
+)
+
+
+Sales QTD =
+TOTALQTD (
+    [Total Sales],
+    'Date'[Date]
+)
+
+
+Sales YTD =
+TOTALYTD (
+    [Total Sales],
+    'Date'[Date]
+)
+
+
+Sales LY =
+CALCULATE (
+    [Total Sales],
+    SAMEPERIODLASTYEAR ( 'Date'[Date] )
+)
+
+
+Sales Var vs LY =
+[Total Sales] - [Sales LY]
+
+
+Sales Var vs LY % =
+DIVIDE ( [Sales Var vs LY], [Sales LY] )
+
+
+Sales Rolling 12M =
+CALCULATE (
+    [Total Sales],
+    DATESINPERIOD (
+        'Date'[Date],
+        MAX ( 'Date'[Date] ),
+        -12,
+        MONTH
+    )
+)
+
+
+Avg Sales Last 12M =
+VAR Last12M =
+    CALCULATE (
+        [Total Sales],
+        DATESINPERIOD (
+            'Date'[Date],
+            MAX ( 'Date'[Date] ),
+            -12,
+            MONTH
+        )
+    )
+VAR MonthsWithData =
+    CALCULATE (
+        DISTINCTCOUNT ( 'Date'[Year-Month] ),
+        DATESINPERIOD (
+            'Date'[Date],
+            MAX ( 'Date'[Date] ),
+            -12,
+            MONTH
+        )
+    )
+RETURN
+DIVIDE ( Last12M, MonthsWithData )
+
+
+Forecast Sales =
+VAR LastActualDate =
+    MAX ( 'Fact Finance'[Date] )
+RETURN
+IF (
+    MAX ( 'Date'[Date] ) > LastActualDate,
+    [Avg Sales Last 12M]
+)
+
+
+Sales Actual + Forecast =
+VAR LastActualDate =
+    MAX ( 'Fact Finance'[Date] )
+VAR CurrentDate =
+    MAX ( 'Date'[Date] )
+RETURN
+IF (
+    CurrentDate <= LastActualDate,
+    [Total Sales],
+    [Forecast Sales]
+)

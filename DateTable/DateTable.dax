@@ -1,0 +1,12 @@
+Date =
+ADDCOLUMNS(
+    CALENDAR(
+        MIN('Fact Finance'[Date]),
+        MAX('Fact Finance'[Date])
+    ),
+    "Year", YEAR([Date]),
+    "Month Number", MONTH([Date]),
+    "Month", FORMAT([Date], "MMM"),
+    "Year-Month", FORMAT([Date], "YYYY-MM"),
+    "Quarter", "Q" & FORMAT([Date], "Q")
+)
