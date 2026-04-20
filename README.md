@@ -1,21 +1,30 @@
-📊 Finance Report with Time Intelligence (Power BI Developer Project)
+📊 Finance Report with Time Intelligence
+Power BI Developer Portfolio Project
 📌 Overview
-This project demonstrates advanced Power BI development using the Financial Sample dataset.
-It focuses on time intelligence, variance analysis, rolling metrics, and a clean, professional dashboard layout.
+This project showcases advanced Power BI development using the Financial Sample dataset.
+It focuses on:
+
+Time‑intelligence DAX
+
+Year‑over‑year variance analysis
+
+Rolling 12‑month metrics
+
+Clean, professional dashboard design
+
+Multi‑page navigation and validation tables
 
 The report contains two pages:
 
 Main Report – KPIs, time‑series charts, and segment/country analysis
 
-Tables – detailed MTD/QTD/YTD validation tables and YoY variance table
-
-This project is designed to showcase real Power BI developer skills for your portfolio.
+Tables Page – detailed MTD/QTD/YTD validation and YoY variance tables
 
 🧱 Data Model
 Tables
 Fact Finance – sales, profit, date, segment, country
 
-Date – continuous date table with Year, Quarter, Month, Year‑Month
+Date Table – continuous calendar with Year, Quarter, Month, Year‑Month
 
 (Optional) Dimension tables for Segment, Country, Product
 
@@ -24,7 +33,7 @@ Date[Date] → Fact Finance[Date] (1:*)
 
 Single‑direction
 
-Date table marked as official Date table
+Date table marked as the official Date table
 
 Screenshots included in /DataModel.
 
@@ -51,18 +60,20 @@ Sales Var vs LY %
 
 Sales Rolling 12M
 
-Forecasting (optional)
+Forecasting (Optional)
 Avg Sales Last 12M
 
 Forecast Sales
 
 Actual + Forecast
 
-All DAX code is included in /DAX/AllMeasures.dax.
+All DAX code is included in:
 
+Code
+/DAX/AllMeasures.dax
 📊 Report Pages
 1. Main Report
-This page provides a complete financial overview with KPIs, time‑series analysis, and breakdowns.
+A complete financial overview with KPIs, time‑series analysis, and breakdowns.
 
 Filters
 Year
@@ -141,35 +152,29 @@ Sales Var vs LY
 Shows month‑over‑month YoY comparison.
 
 📸 Screenshots Included
-Inside /Screenshots:
+Inside /Screenshots
+MainReport.png
 
-Main Report
+TablesPage.png
 
-Tables Page
+SalesByDate.png
 
-Total Sales by Date
+Rolling12M.png
 
-Rolling 12M vs Total Sales
+SalesBySegment.png
 
-Sales by Segment
+SalesByCountry.png
 
-Sales by Country
+TimeIntelligenceTable.png
 
-Time Intelligence Table
+YoYVarianceTable.png
 
-YoY Variance Table
+Inside /DataModel
+Model.png
 
-KPI cards
+Relationships.png
 
-Filters & navigation buttons
-
-Inside /DataModel:
-
-Data model
-
-Relationships
-
-Date table
+DateTable.png
 
 📁 Repository Structure
 Code
