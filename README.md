@@ -1,153 +1,111 @@
-Finance Report with Time Intelligence
-📌 Overview
-This project demonstrates advanced Power BI development using the Financial Sample dataset.
+# 📊 Finance Report with Time Intelligence
 
-It includes:
+## Overview
+This project demonstrates advanced Power BI development using the Financial Sample dataset. It focuses on:
 
-Time‑intelligence DAX
+- Time‑intelligence DAX
+- Year‑over‑year variance analysis
+- Rolling 12‑month metrics
+- KPI‑driven reporting
+- Clean dashboard layout
+- Validation tables for accuracy
 
-Year‑over‑year variance analysis
+The report contains two pages: Main Report and Tables Page.
 
-Rolling 12‑month metrics
+## Data Model
 
-KPI‑driven reporting
+### Tables
+- **Fact Finance** — sales, profit, date, segment, country
+- **Date Table** — continuous calendar with Year, Quarter, Month, Year‑Month
+- (Optional) Segment, Country, Product dimensions
 
-Clean dashboard layout
+### Relationships
+- Date[Date] → Fact Finance[Date] (1:*)
+- Date table marked as the official date table
+- Screenshots available in /DataModel.
 
-Validation tables for accuracy
+## DAX Measures
 
-The report contains two pages:
+Key measures include:
 
-Main Report
+- Total Sales
+- Total Profit
+- Profit Margin %
+- Sales MTD / QTD / YTD
+- Sales LY
+- Sales Var vs LY / %
+- Sales Rolling 12M
+- Avg Sales Last 12M
+- Forecast Sales
+- Actual + Forecast
 
-Tables Page
+Full DAX code is included in /DAX/AllMeasures.dax.
 
-📂 Data Model
-Tables
-Fact Finance – sales, profit, date, segment, country
+## Report Pages
 
-Date Table – continuous calendar with Year, Quarter, Month, Year‑Month
+### Main Report
+- KPI cards
+- Total Sales by Date
+- Rolling 12M vs Total Sales
+- Sales by Segment
+- Sales by Country
+- Navigation buttons
+- Filters: Year, Country, Segment
 
-(Optional) Dimension tables for Segment, Country, Product
+### Tables Page
+- Time‑intelligence validation table (MTD, QTD, YTD)
+- YoY variance table
+- Filters: Year, Country, Segment
 
-Relationships
-Date[Date] → Fact Finance[Date] (1:*)
-This is the core relationship driving the model.
+## Screenshots
 
-Screenshots included in /DataModel.
+Located in /Screenshots:
 
-🧮 DAX Measures
-Total Sales
+- Main Report
+- Tables Page
+- Total Sales by Date
+- Rolling 12M vs Total Sales
+- Sales by Segment
+- Sales by Country
+- Time Intelligence Table
+- YoY Variance Table
+- KPI cards
+- Filters & navigation
 
-Total Profit
+## Repository Structure
 
-Profit Margin %
-
-Sales MTD
-
-Sales QTD
-
-Sales YTD
-
-Sales LY
-
-Sales Var vs LY
-
-Sales Var vs LY %
-
-Sales Rolling 12M
-
-Avg Sales Last 12M
-
-Forecast Sales
-
-Actual + Forecast
-
-(Full DAX code included in /DAX/AllMeasures.dax)
-
-📊 Report Pages
-Main Report
-KPI cards
-
-Total Sales by Date
-
-Rolling 12M vs Total Sales
-
-Sales by Segment
-
-Sales by Country
-
-Navigation buttons
-
-Filters: Year, Country, Segment
-
-Tables Page
-Time‑intelligence validation table (MTD, QTD, YTD)
-
-YoY variance table
-
-Filters: Year, Country, Segment
-
-📸 Screenshots
-Include:
-
-Main Report
-
-Tables Page
-
-Total Sales by Date
-
-Rolling 12M vs Total Sales
-
-Sales by Segment
-
-Sales by Country
-
-Time Intelligence Table
-
-YoY Variance Table
-
-KPI cards
-
-Filters & navigation buttons
-
-📁 Repository Structure
-Code
+### Code
+```
 /DataModel
-    Model.png
-    Relationships.png
-    DateTable.png
+  Model.png
+  Relationships.png
+  DateTable.png
 
 /DAX
-    AllMeasures.dax
+  AllMeasures.dax
 
 /Screenshots
-    MainReport.png
-    TablesPage.png
-    SalesByDate.png
-    Rolling12M.png
-    SalesBySegment.png
-    SalesByCountry.png
-    TimeIntelligenceTable.png
-    YoYVarianceTable.png
+  MainReport.png
+  TablesPage.png
+  SalesByDate.png
+  Rolling12M.png
+  SalesBySegment.png
+  SalesByCountry.png
+  TimeIntelligenceTable.png
+  YoYVarianceTable.png
 
 /PowerBI
-    Finance_TimeIntelligence.pbix
+  Finance_TimeIntelligence.pbix
+```
 
-README.md
-🏁 Summary
+## Summary
+
 This project demonstrates:
 
-Professional Power BI dashboard design
-
-Advanced time‑intelligence DAX
-
-Rolling metrics and YoY variance
-
-Clean star‑schema modelling
-
-KPI‑driven reporting
-
-Validation tables for accuracy
-
-Clear navigation and UX
+- Professional Power BI dashboard design
+- Advanced time‑intelligence DAX
+- Rolling metrics and YoY variance
+- Clean star‑schema modelling
+- KPI‑driven reporting
+- Validation tables for accuracy
+- Clear navigation and UX
